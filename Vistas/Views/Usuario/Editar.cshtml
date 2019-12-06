@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_LayoutUsuario.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-12">
+            <form action="/Usuario/Editar?id=@Model.Id" method="post">
+                <br />
+                <div class="row justify-content-center pt-5">
+                    <div class="col-12 col-md-4 col-sm-12 ">
+                        <div class=" form-group">
+                            <h5 class="form-control-label">Nombre</h5>
+                            <input class=" form-control" name="nombres" value="@Model.nombres" />
+                        </div>
+                        <div class="form-group">
+                            <h5 class="form-control-label">Apellidos</h5>
+                            <input class=" form-control" name="apellidos" value="@Model.apellidos" />
+                        </div>
+                        <div class="form-group">
+                            <h5 class="form-control-label">Celular</h5>
+                            <input class=" form-control" name="celular" value="@Model.celular" />
+                        </div>
+                        <div class="form-group">
+                            <h5 class="form-control-label">Correo</h5>
+                            <input class=" form-control" name="correo" value="@Model.correo" />
+                        </div>
+                        <div class="form-group">
+                            <h5 class="form-control-label">Cargo</h5>
+                            <input class=" form-control" name="cargo" value="@Model.cargo" />
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

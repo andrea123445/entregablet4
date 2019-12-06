@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Costo";
+    Layout = null;
+}
+<select name="Reserva.HoraInicio">
+    @foreach (var item in Model)
+    {
+        <option value=@item.Id>@item.Horas</option>
+    }
+</select>

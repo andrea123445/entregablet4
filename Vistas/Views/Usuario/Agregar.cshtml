@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_LayoutUsuario.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-12">
+            <form action="#" method="post">
+                <br />
+                <div class="row justify-content-center pt-5">
+                    <div class="col-12 col-md-4 col-sm-12 ">
+                        <div class=" form-group">
+                            <h5 class="form-control-label">Nombres</h5>
+                            <input class=" form-control" name="nombres" value="@Model.nombres" />
+                            @Html.ValidationMessage("nombres")
+                        </div>
+                        <div class="form-group">
+                            <h5 class="form-control-label">Apellidos</h5>
+                            <input class=" form-control" name="apellidos" value="@Model.apellidos" />
+                            @Html.ValidationMessage("apellidos")
+                        </div>
+                        <div class="form-group">
+                            <h5 class="form-control-label">Celular</h5>
+                            <input class=" form-control" name="celular" value="@Model.celular" />
+                            @Html.ValidationMessage("celular")
+                            @Html.ValidationMessage("celular invalido")
+                        </div>
+                        <div class="form-group">
+                            <h5 class="form-control-label">Correo</h5>
+                            <input class=" form-control" name="correo" value="@Model.correo" />
+                            @Html.ValidationMessage("Email vacio")
+                            @Html.ValidationMessage("Email")
+                        </div>
+                        <div class="form-group">
+                            <h5 class="form-control-label">Cargo</h5>
+                            <input class=" form-control" name="cargo" value="@Model.cargo" />
+                            @Html.ValidationMessage("cargo")
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

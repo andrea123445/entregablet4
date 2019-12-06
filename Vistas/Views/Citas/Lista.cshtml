@@ -1,0 +1,49 @@
+﻿@using Vistas.Models;
+@{
+    ViewBag.Title = "Lista";
+    User usuario = (User)Session["usuario"];
+
+    var nombre = "";
+    int Id = usuario.Id;
+    if (usuario != null)
+    {
+        nombre = usuario.nombres;
+
+    }
+}
+
+<h2>Lista</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="pt-5 col-md-12 table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Horas</th>
+                        <th scope="col">Disponibilidad</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @{foreach (var Horario in ViewBag.Horarios)
+                        {
+                    <tr>
+                        <td>@Horario.Encargado.nombres</td>
+                        <td>@Horario.Horas</td>
+                        @{ if (Horario.Disponibilidad == true)
+                            {
+                            <td>Disponible</td>
+                            }
+                            else
+                            {
+                                <td>Ocupado</td>
+                            }
+                            }
+                    </tr>
+                    }}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

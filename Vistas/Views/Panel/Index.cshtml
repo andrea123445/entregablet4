@@ -1,0 +1,23 @@
+﻿@using Vistas.Models;
+@{
+    ViewBag.Title = "Index";
+    User usuario = (User)Session["usuario"];
+
+    var nombre = "";
+    if (usuario != null)
+    {
+        nombre = usuario.nombres;
+        if(usuario.username == "Admin")
+        {
+            Layout = "~/Views/Shared/_LayoutServicio.cshtml";
+        }
+       
+    }
+
+}
+<h2 class="text-left"> Bienvenid&#64 @nombre </h2>
+<div class="container">
+    <div class="row justify-content-md-center">        
+        <img class="pt-5" src="~/Content/CSSLOGIN/images/pp.png" alt="IMG">
+    </div>
+</div>

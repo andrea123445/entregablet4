@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Lista";
+    Layout = "~/Views/Shared/_LayoutUsuario.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="pt-5 col-md-12 table-responsive">
+            <div class="pt-3 pr-5 pb-2 row justify-content-end">
+                <a href="/Usuario/Agregar" class="btn btn-primary">Agregar</a>
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Celular</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.nombres</td>
+                            <td>@item.apellidos</td>
+                            <td>@item.celular</td>
+                            <td>@item.correo</td>
+                            <td>@item.cargo</td>
+                            <td><a href="/Usuario/Editar?id=@item.Id">Editar</a></td>
+                            <td><a href="/Usuario/Eliminar?id=@item.Id">>Eliminar</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

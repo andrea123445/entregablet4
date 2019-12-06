@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+@using Vistas.Models;
+@{
+    User usuario = (User)Session["usuario"];
+
+    var nombre = "";
+    if (usuario != null)
+    {
+        nombre = usuario.nombres;
+    }
+
+}
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f7b2df;">
+            <a class="navbar-brand pl-lg-5 ml-lg-5" href="/Panel/Index">
+                <img src="~/Content/CSSLOGIN/images/QMONADA.png" width="100" height="50" class="d-inline-block align-top" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <style>
+
+                ul.tipo-letra {
+                    font-family: 'Calistoga', cursive;
+                    color: white;
+                }
+            </style>
+            <div class="collapse  navbar-collapse" id="navbarText">
+                <ul class="tipo-letra navbar-nav mr-auto">
+                    <li class="nav-item active ml-lg-5 mr-lg-5">
+                        <a class="text-dark nav-link" href="/Panel/Index">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item pl-lg-5 mr-lg-5">
+                        <a class="nav-link" href="/Usuario/Lista">Empleados</a>
+                    </li>
+                    <li class="nav-item pl-lg-5 mr-lg-5">
+                        <a class="nav-link" href="/ServicioCRUD/Lista">Servicios</a>
+                    </li>
+
+                    <li class="nav-item pl-lg-5 mr-lg-5">
+                        <a class="nav-link" href="/Citas/Lista">Lista de Reservas</a>
+                    </li>
+                    <li class="nav-item pl-lg-5 mr-lg-5">
+                        <a class="nav-link" href="/Ayuda/Index">Ayuda</a>
+                    </li>
+
+                    @{ if (usuario != null)
+                        {
+
+                            <li class="nav-item pl-lg-5 mr-lg-5">
+                                <a class="nav-link" href="/Login/CerrarSesion">Cerrar Sesion</a>
+                            </li>
+                        }
+                    }
+                </ul>
+                <span class="navbar-text">
+                    <!--Redes sociales-->
+                </span>
+            </div>
+        </nav>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
+</body>
+</html>
